@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericReport", "RentExpress\GenericReport.csproj", "{FDA087C2-F502-48F8-AE4D-FB97FE38169F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "Modelo\Modelo.csproj", "{03639EFF-A4D7-4E40-97B4-5A215660C986}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{74F1C59B-0F27-454A-882B-B7A768F1B754}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDA087C2-F502-48F8-AE4D-FB97FE38169F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDA087C2-F502-48F8-AE4D-FB97FE38169F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDA087C2-F502-48F8-AE4D-FB97FE38169F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDA087C2-F502-48F8-AE4D-FB97FE38169F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03639EFF-A4D7-4E40-97B4-5A215660C986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03639EFF-A4D7-4E40-97B4-5A215660C986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03639EFF-A4D7-4E40-97B4-5A215660C986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03639EFF-A4D7-4E40-97B4-5A215660C986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74F1C59B-0F27-454A-882B-B7A768F1B754}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F1C59B-0F27-454A-882B-B7A768F1B754}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F1C59B-0F27-454A-882B-B7A768F1B754}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F1C59B-0F27-454A-882B-B7A768F1B754}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
