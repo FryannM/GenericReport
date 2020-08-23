@@ -8,7 +8,6 @@
     <Folder Include="Entidades\" />
     <Folder Include="Abstracts\" />
     <Folder Include="Dtos\" />
-    <Folder Include="Dtos\PersonasDtos\" />
     <Folder Include="Dtos\Facturas\" />
   </ItemGroup>
   <ItemGroup>
