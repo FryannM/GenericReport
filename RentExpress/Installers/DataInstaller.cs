@@ -4,8 +4,6 @@ using Microsoft.Extensions.DependencyInjection;
 using RentExpress.ApplicationContex;
 using RentExpress.Profiles;
 using RentExpress.Service;
-using Services;
-using Services.Service;
 
 namespace RentExpress.Installers
 {
@@ -15,7 +13,7 @@ namespace RentExpress.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContex>(option =>
-            option.UseSqlServer(configuration.GetConnectionString("DevConnection")));
+            option.UseNpgsql(configuration.GetConnectionString("DevConnection")));
 
 
             // Auto Mapper
@@ -29,8 +27,7 @@ namespace RentExpress.Installers
 
             // Services
 
-            services.AddTransient<IPersonaServices, PersonaServices>();
-            services.AddTransient<IMarcaServices, MarcasServices>();
+            services.AddTransient<IFacturasServices, FacturaServices>();
         }
     }
 }

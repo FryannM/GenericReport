@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Modelo;
 using Modelo.Dtos;
+using Modelo.Dtos.Facturas;
 using Modelo.Entidades;
 
 namespace RentExpress.Profiles
@@ -9,9 +9,10 @@ namespace RentExpress.Profiles
     {
         public GeneralProfile()
         {
-            CreateMap<Personas, PersonaDto>().ReverseMap();
+
             CreateMap<Roles, RolesDto>().ReverseMap();
-            CreateMap<Marcas, MarcasDto>().ReverseMap();
+            CreateMap<FacturaCabeceraDto, FacturaCabeceraDto>().ReverseMap();
+
         }
     }
 }
