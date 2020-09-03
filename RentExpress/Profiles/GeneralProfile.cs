@@ -7,9 +7,7 @@ namespace RentExpress.Profiles
     {
         public GeneralProfile()
         {
-
             CreateMap<FacturaCabeceraDto, FacturaCabeceraDto>().ReverseMap();
-
         }
     }
 }

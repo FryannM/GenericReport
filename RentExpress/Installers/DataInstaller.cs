@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GenericReport.ApplicationContex;
+using GenericReport.Service.User;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RentExpress.ApplicationContex;
@@ -13,7 +15,11 @@ namespace RentExpress.Installers
         public void InstallServices(IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContex>(option =>
-            option.UseNpgsql(configuration.GetConnectionString("DevConnection")));
+            option.UseNpgsql(configuration.GetConnectionString("PostgreConnection")));
+
+            services.AddDbContext<SqlDbContext>(op =>
+            op.UseSqlServer(configuration.GetConnectionString("SqlConnection")));
+
 
 
             // Auto Mapper
@@ -28,6 +34,7 @@ namespace RentExpress.Installers
             // Services
 
             services.AddTransient<IFacturasServices, FacturaServices>();
+            services.AddTransient<IUsuarioServices, UsuarioServices>();
         }
     }
 }

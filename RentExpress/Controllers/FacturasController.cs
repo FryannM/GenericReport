@@ -22,8 +22,6 @@ namespace RentExpress.Controllers
             _services = services;
         }
 
-
-
         [HttpGet("facturas")]
         public IQueryable<FacturaCabecera> GetF() => _services.GetFacturaCabeceras();
 

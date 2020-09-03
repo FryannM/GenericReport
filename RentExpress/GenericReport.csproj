@@ -5,15 +5,16 @@
   </PropertyGroup>
 
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'RentExpress' " />
   <ItemGroup>
     <ProjectReference Include="..\Modelo\Modelo.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ApplicationContex\" />
     <Folder Include="Installers\" />
     <Folder Include="Profiles\" />
+    <Folder Include="Service\User\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />

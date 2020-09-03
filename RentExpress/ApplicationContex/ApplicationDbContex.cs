@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Modelo;
 using Modelo.Entidades;
 
 namespace RentExpress.ApplicationContex
