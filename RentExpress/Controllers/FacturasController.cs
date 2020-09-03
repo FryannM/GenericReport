@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using Modelo.Dtos;
-using Modelo.Dtos.Facturas;
 using Modelo.Entidades;
 using RentExpress.Service;
 

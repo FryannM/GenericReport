@@ -15,9 +15,9 @@ namespace GenericReport.Service.User
         }
 
 
-        public IEnumerable<Usuarios> GetUsuarios( string  sql)
+        public IEnumerable<Usuarios> GetUsuarios()
         {
-           var usuarios = _dbContext.Usuarios.;
+            var usuarios = _dbContext.Usuarios;
             return usuarios; 
         }
     }

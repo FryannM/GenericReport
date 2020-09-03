@@ -9,6 +9,7 @@
     <Folder Include="Abstracts\" />
     <Folder Include="Dtos\" />
     <Folder Include="Dtos\Facturas\" />
+    <Folder Include="Dtos\ConnectionStrings\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />

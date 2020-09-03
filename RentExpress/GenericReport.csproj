@@ -15,6 +15,7 @@
     <Folder Include="Installers\" />
     <Folder Include="Profiles\" />
     <Folder Include="Service\User\" />
+    <Folder Include="Service\ConnectionString\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
