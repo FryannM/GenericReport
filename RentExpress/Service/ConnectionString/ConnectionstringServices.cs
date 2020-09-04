@@ -36,20 +36,18 @@ namespace GenericReport.Service.ConnectionString
         {
             var result = new OperationResult<ConnectionStringEntity>();
 
-            try
-            {
                  var modelo = _mapper.Map<ConnectionStringEntity>(model);
                  _services.ConnectionStrings.Add(modelo);
                 _services.SaveChanges();
 
                 result.Success = true;
                 result.ResultObject = modelo;
-            }
-            catch (Exception ex)
-            {
-              throw ex;
-            }
+    
+           var res =  _mapper.Map<ConnectionStringDto>(modelo);
+
+
             return result;
+          
         }
 
 

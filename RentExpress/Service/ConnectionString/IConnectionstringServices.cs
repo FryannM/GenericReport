@@ -3,7 +3,7 @@ using Modelo.Abstracts;
 using Modelo.Dtos.ConnectionStrings;
 using Modelo.Entidades;
 
-namespace GenericReport.Service.User
+namespace GenericReport.Service.ConnectionString
 {
     public interface IConnectionstringServices
     {
