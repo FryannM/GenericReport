@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
+using Modelo.Abstracts;
 using Modelo.Dtos.ConnectionStrings;
+using Modelo.Entidades;
 
 namespace GenericReport.Service.User
 {
     public interface IConnectionstringServices
     {
         IEnumerable<ConnectionStringDto> GetAll();
-        ConnectionStringDto Post(ConnectionStringDto  model);
-        ConnectionStringDto Put(int Id);
+        OperationResult<ConnectionStringEntity> Post(ConnectionStringDto model);
+        OperationResult<ConnectionStringEntity> Put(ConnectionStringDto model);
         ConnectionStringDto GetByid(int Id);
     }
 }
