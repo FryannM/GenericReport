@@ -1,4 +1,5 @@
 ﻿using GenericReport.ApplicationContex;
+using GenericReport.Service.Clientes;
 using GenericReport.Service.ConnectionString;
 using GenericReport.Service.User;
 using Microsoft.EntityFrameworkCore;
@@ -37,6 +38,8 @@ namespace RentExpress.Installers
             services.AddTransient<IFacturasServices, FacturaServices>();
             services.AddTransient<IUsuarioServices, UsuarioServices>();
             services.AddTransient<IConnectionstringServices,ConnectionstringServices>();
+            services.AddTransient<IClientesServices,ClientesServices>();
+
 
         }
     }
