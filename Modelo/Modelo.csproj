@@ -11,6 +11,7 @@
     <Folder Include="Dtos\Facturas\" />
     <Folder Include="Dtos\ConnectionStrings\" />
     <Folder Include="Dtos\Clientes\" />
+    <Folder Include="Dtos\Company\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />

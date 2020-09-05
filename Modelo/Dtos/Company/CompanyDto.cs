@@ -1,9 +1,12 @@
-﻿namespace Modelo.Entidades
+﻿using System;
+using Modelo.Entidades;
+
+namespace Modelo.Dtos.Company
 {
-    public class CompanyEntity :AEntity<int>
+    public class CompanyDto :AEntity<int>
     {
         public string Rnc { get; set; }
-        public string  NombreComercial { get; set; }
+        public string NombreComercial { get; set; }
         public string RazonSocial { get; set; }
         public string DireccionComercial { get; set; }
         public string DireccionFisica { get; set; }
