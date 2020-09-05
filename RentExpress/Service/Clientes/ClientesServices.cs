@@ -21,5 +21,12 @@ namespace GenericReport.Service.Clientes
             var model = _services.Clientes.AsEnumerable();
             return _mapper.Map<IEnumerable<ClientesDto>>(model);
         }
+
+        public ClientesDto GetById(int id)
+        {
+            var model = _services.Clientes.Find(id);
+
+            return _mapper.Map<ClientesDto>(model);
+        }
     }
 }

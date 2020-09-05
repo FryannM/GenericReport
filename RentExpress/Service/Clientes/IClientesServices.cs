@@ -6,5 +6,7 @@ namespace GenericReport.Service.Clientes
     public interface IClientesServices 
     {
         IEnumerable<ClientesDto> GetAll();
+        ClientesDto GetById(int id);
+
     }
 }
