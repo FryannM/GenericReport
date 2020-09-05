@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using GenericReport.ApplicationContex;
-using GenericReport.Service.User;
 using Modelo.Abstracts;
 using Modelo.Dtos.ConnectionStrings;
 using Modelo.Entidades;
@@ -43,9 +42,6 @@ namespace GenericReport.Service.ConnectionString
                 result.Success = true;
                 result.ResultObject = modelo;
     
-           var res =  _mapper.Map<ConnectionStringDto>(modelo);
-
-
             return result;
           
         }
