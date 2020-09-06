@@ -14,10 +14,8 @@ namespace GenericReport.Controllers
         public ClientesController(IClientesServices services)
         {
             _services = services;
-
         }
 
-        // GET: api/values
         [HttpGet("clientes")]
         public IEnumerable<ClientesDto> Get() => _services.GetAll();
         
@@ -30,6 +28,14 @@ namespace GenericReport.Controllers
             return Ok(model);
         }
 
+        [HttpGet("factura/{id}")]
+        public ActionResult GetFacturaCliente(int id)
+        {
+            var model = _services.GetFacturaCabeceras(id);
+            if (model == null) return NotFound();
+            return Ok(model);
+        }
+
         [HttpPost("clientes")]
         public ActionResult Save([FromBody] ClientesSaveDto model)
         {
@@ -38,7 +44,6 @@ namespace GenericReport.Controllers
             var result = _services.Post(model);
 
             return Ok(result);
-
         }
 
     }

@@ -39,7 +39,7 @@ namespace GenericReport.ApplicationContex
             modelBuilder.Entity<ClientesEntity>(entity =>
                 {
                     entity.ToTable("TBL_CLIENTES").HasKey(x => x.Id);
-                    entity.Property(x => x.Id).HasColumnName("Codigo");
+                    entity.Property(x => x.Id).HasColumnName("CODIGO");
                     entity.Property(x => x.Nombre).HasColumnName("NOMBRE");
                     entity.Property(x => x.Apellido).HasColumnName("APELLIDO");
                     entity.Property(x => x.Estado).HasColumnName("ESTADO");

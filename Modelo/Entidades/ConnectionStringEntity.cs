@@ -1,5 +1,4 @@
-﻿using System;
-namespace Modelo.Entidades
+﻿namespace Modelo.Entidades
 {
     public class ConnectionStringEntity
     {
