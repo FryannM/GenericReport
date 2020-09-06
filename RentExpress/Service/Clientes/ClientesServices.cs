@@ -9,6 +9,7 @@ using Modelo.Abstracts;
 using Modelo.Dtos.Clientes;
 using Modelo.Entidades;
 using RentExpress.ApplicationContex;
+using
 
 namespace GenericReport.Service.Clientes
 {
@@ -45,18 +46,17 @@ namespace GenericReport.Service.Clientes
 
             //var cliente = new ClientesEntity();
 
-            var model  = _services.Clientes.Select(x => new ClientesDto
-            {
-                Nombre = x.Nombre
-            }).Where( x => x.Id == id);
+            var model  = _services.Clientes.Include( e => e.Connection)
+                .Where( x => x.Id == id).AsNoTracking().ToList();
 
-
-
+            Channel.getConnnectionString(model.FirstOrDefault().Connection.DescripcionConnection);
+    
+ 
             var result = _appdbContex.FacturaCabecera.FromSqlRaw(sb.ToString());
 
                 return (IQueryable<FacturaCabecera>)result;
         }
-
+      
         public OperationResult<ClientesEntity> Post(ClientesSaveDto model)
         {
             var result = new OperationResult<ClientesEntity>();
