@@ -27,7 +27,8 @@ namespace GenericReport.Service.ConnectionString
 
         public ConnectionStringDto GetByid(int Id)
         {
-            var model = _services.ConnectionStrings.FindAsync(Id);
+            var model = _services.ConnectionStrings.Find(Id);
+            if (model == null) return null;
             return _mapper.Map<ConnectionStringDto>(model);
         }
 

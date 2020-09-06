@@ -23,10 +23,20 @@ namespace GenericReport.Controllers
         }
 
         [HttpGet ("connections")]
-        public IEnumerable<ConnectionStringDto> Get()
+        public IEnumerable<ConnectionStringDto> GetAll()
         {
             return _services.GetAll();
         }
+
+
+        [HttpGet("{Id}")]
+        public ActionResult<ConnectionStringDto> Get(int Id)
+        {
+            var model =  _services.GetByid(Id);
+            if (model == null) return NotFound();
+            return Ok(model);
+        }
+
 
         [HttpPost("connection")]
         public ActionResult Save([FromBody] ConnectionStringDto model)
