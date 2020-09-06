@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using Modelo.Abstracts;
 using Modelo.Dtos.Clientes;
+using Modelo.Entidades;
 
 namespace GenericReport.Service.Clientes
 {
@@ -7,6 +9,6 @@ namespace GenericReport.Service.Clientes
     {
         IEnumerable<ClientesDto> GetAll();
         ClientesDto GetById(int id);
-
+        OperationResult<ClientesEntity> Post(ClientesSaveDto model);
     }
 }

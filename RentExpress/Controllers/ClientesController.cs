@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using GenericReport.Service.Clientes;
 using Microsoft.AspNetCore.Mvc;
 using Modelo.Dtos.Clientes;
@@ -33,12 +30,16 @@ namespace GenericReport.Controllers
             return Ok(model);
         }
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("clientes")]
+        public ActionResult Save([FromBody] ClientesSaveDto model)
         {
+            if (!ModelState.IsValid) return BadRequest();
+
+            var result = _services.Post(model);
+
+            return Ok(result);
+
         }
 
-     
     }
 }

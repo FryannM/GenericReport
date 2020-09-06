@@ -28,7 +28,6 @@ namespace GenericReport.Controllers
             return _services.GetAll();
         }
 
-
         [HttpGet("{Id}")]
         public ActionResult<ConnectionStringDto> Get(int Id)
         {

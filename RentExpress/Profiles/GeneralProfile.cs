@@ -14,6 +14,7 @@ namespace RentExpress.Profiles
             CreateMap<FacturaCabeceraDto, FacturaCabeceraDto>().ReverseMap();
             CreateMap<ConnectionStringDto, ConnectionStringEntity>().ReverseMap();
             CreateMap<ClientesDto, ClientesEntity>().ReverseMap();
+            CreateMap<ClientesSaveDto, ClientesEntity>().ReverseMap();
             CreateMap<CompanyDto, CompanyEntity>().ReverseMap();
 
         }
