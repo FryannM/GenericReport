@@ -61,9 +61,6 @@ namespace GenericReport.ApplicationContex
         public DbSet<Usuarios> Usuarios { get; set; }
         public DbSet<ConnectionStringEntity> ConnectionStrings { get; set; }
         public DbSet<ClientesEntity> Clientes { get; set; }
-
-
-
+        public DbSet<CompanyEntity> Company { get; set; }
     }
-
 }

@@ -12,5 +12,6 @@ namespace GenericReport.Service.Clientes
         ClientesDto GetById(int id);
         OperationResult<ClientesEntity> Post(ClientesSaveDto model);
         IQueryable<FacturaCabecera> GetFacturaCabeceras(int id );
+        OperationResult<ClientesEntity> Put(ClientesSaveDto model);
     }
 }

@@ -5,11 +5,11 @@ using System.Text;
 using AutoMapper;
 using GenericReport.ApplicationContex;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Modelo.Abstracts;
 using Modelo.Dtos.Clientes;
 using Modelo.Entidades;
 using RentExpress.ApplicationContex;
-using
 
 namespace GenericReport.Service.Clientes
 {
@@ -17,9 +17,11 @@ namespace GenericReport.Service.Clientes
     {
         private readonly SqlDbContext _services;
         private readonly ApplicationDbContex _appdbContex;
+         public IConfiguration Configuration { get; }
 
         private readonly IMapper _mapper;
-        public ClientesServices( SqlDbContext services, IMapper mapper, ApplicationDbContex appdbContex)
+        public ClientesServices(SqlDbContext services,
+            IMapper mapper,ApplicationDbContex appdbContex)
         {
             _services = services;
             _mapper = mapper;
@@ -49,7 +51,11 @@ namespace GenericReport.Service.Clientes
             var model  = _services.Clientes.Include( e => e.Connection)
                 .Where( x => x.Id == id).AsNoTracking().ToList();
 
-            Channel.getConnnectionString(model.FirstOrDefault().Connection.DescripcionConnection);
+     
+
+            var mo =   Channel.getConnnectionString(model.FirstOrDefault().Connection.DescripcionConnection);
+
+            Configuration.GetConnectionString(mo);
     
  
             var result = _appdbContex.FacturaCabecera.FromSqlRaw(sb.ToString());
@@ -74,7 +80,25 @@ namespace GenericReport.Service.Clientes
                 throw ex;
             }
             return result;
+        }
 
+        public OperationResult<ClientesEntity> Put(ClientesSaveDto model)
+        {
+            var result = new OperationResult<ClientesEntity>();
+            try
+            {
+                var modelo = _mapper.Map<ClientesEntity>(model);
+                _services.Clientes.Update(modelo);
+                _services.SaveChanges();
+                result.Success = true;
+                result.ResultObject = modelo;
+            }
+            catch (Exception ex)
+            {
+                result.Success = false;
+                throw ex;
+            }
+            return result;
         }
     }
 }
